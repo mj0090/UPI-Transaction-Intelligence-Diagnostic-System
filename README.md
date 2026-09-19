@@ -10,32 +10,39 @@ Tech Stack: Python (pandas, numpy), PostgreSQL, Power BI (DAX, What-If Modeling)
 # 1. Executive Project Summary
 Modern Unified Payments Interface (UPI) infrastructures handle tens of millions of daily transactions across diverse apps (Google Pay, PhonePe, Paytm, CRED) and banking gateways (HDFC, SBI, ICICI, Axis). This project establishes a production-grade business intelligence solution designed to monitor transaction telemetry in real-time, detect operational latency bottlenecks, pinpoint root causes for transaction failures, and model the financial revenue recovery of technical gateway optimizations.
 
-# 2. Core Methodology & Analytics Architecture
-[ Raw Synthetic Pipeline (35k Events) ] 
-                   │
-                   ▼
-[ Data Quality & Defensive Engineering ]
-  • Regex deduplication (1–2% duplicate transaction_ids)
-  • Casing & status normalization ('Succ', 'SUCCESS' -> 'Success')
-  • Anomaly removal (negative latencies, timestamps > business limits)
-  • Explicit date casting & missing timestamp imputation
-                   │
-                   ▼
-[ Feature Engineering & Lifecycle State Engine ]
-  • Attempt Tracking: attempt_no, retry_flag, reversal_flag
-  • Temporal Deltas: settlement_delay_min = (settlement_ts - event_ts)
-  • Operational State Flags: support_contact_flag, refund_flag
-                   │
-                   ▼
-[ Analytical Workflows & Inference ]
-  • Pareto Analysis: Categorical & Merchant 80/20 drift concentration
-  • Hypothesis Testing: Welch’s t-test (Gateway latency vs. Retry frequency)
-  • Merchant Risk Score: Weighted normalized composite scoring
-                   │
-                   ▼
-[ Executive Delivery ]
-  • Production DuckDB / PostgreSQL validation queries
-  • 4-Page Power BI Control Room with dynamic What-If parameter simulation
+```text
+========================================================================================
+                 2. CORE METHODOLOGY & ANALYTICS ARCHITECTURE
+========================================================================================
+
+  [ Raw Synthetic Pipeline (35k Events) ]
+                     │
+                     ▼
+  [ Data Quality & Defensive Engineering ]
+    • Regex deduplication (1–2% duplicate transaction_ids)
+    • Casing & status normalization ('Succ', 'SUCCESS' -> 'Success')
+    • Anomaly removal (negative latencies, timestamps > business limits)
+    • Explicit date casting & missing timestamp imputation
+                     │
+                     ▼
+  [ Feature Engineering & Lifecycle State Engine ]
+    • Attempt Tracking: attempt_no, retry_flag, reversal_flag
+    • Temporal Deltas: settlement_delay_min = (settlement_ts - event_ts)
+    • Operational State Flags: support_contact_flag, refund_flag
+                     │
+                     ▼
+  [ Analytical Workflows & Inference ]
+    • Pareto Analysis: Categorical & Merchant 80/20 drift concentration
+    • Hypothesis Testing: Welch’s t-test (Gateway latency vs. Retry frequency)
+    • Merchant Risk Score: Weighted normalized composite scoring
+                     │
+                     ▼
+  [ Executive Delivery ]
+    • Production DuckDB / PostgreSQL validation queries
+    • 4-Page Power BI Control Room with dynamic What-If parameter simulation
+
+========================================================================================
+```
 
 # 3. Multi-Page Dashboard Implementation
 The dashboard is organized into four purpose-built analytical workspaces, balancing high-level executive summaries with granular developer diagnostics.
