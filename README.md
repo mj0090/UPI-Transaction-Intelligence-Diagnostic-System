@@ -15,7 +15,7 @@ Modern Unified Payments Interface (UPI) infrastructures handle tens of millions 
                  2. CORE METHODOLOGY & ANALYTICS ARCHITECTURE
 ========================================================================================
 
-  [ Raw Synthetic Pipeline (35k Events) ]
+  [ Raw Synthetic Pipeline (2 Lakh Events) ]
                      │
                      ▼
   [ Data Quality & Defensive Engineering ]
@@ -25,20 +25,8 @@ Modern Unified Payments Interface (UPI) infrastructures handle tens of millions 
     • Explicit date casting & missing timestamp imputation
                      │
                      ▼
-  [ Feature Engineering & Lifecycle State Engine ]
-    • Attempt Tracking: attempt_no, retry_flag, reversal_flag
-    • Temporal Deltas: settlement_delay_min = (settlement_ts - event_ts)
-    • Operational State Flags: support_contact_flag, refund_flag
-                     │
-                     ▼
-  [ Analytical Workflows & Inference ]
-    • Pareto Analysis: Categorical & Merchant 80/20 drift concentration
-    • Hypothesis Testing: Welch’s t-test (Gateway latency vs. Retry frequency)
-    • Merchant Risk Score: Weighted normalized composite scoring
-                     │
-                     ▼
   [ Executive Delivery ]
-    • Production DuckDB / PostgreSQL validation queries
+    • Production PostgreSQL validation queries
     • 4-Page Power BI Control Room with dynamic What-If parameter simulation
 
 ========================================================================================
