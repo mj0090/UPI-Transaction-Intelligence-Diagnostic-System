@@ -3,10 +3,9 @@ Data Analysis &amp; Business Intelligence Project
 
 Tech Stack: Python (pandas, numpy), PostgreSQL, Power BI (DAX, What-If Modeling)
 
-> ### 📊 ANALYZED RECORDS     	> ### 📊 GROSS VALUE ANALYZED		> ### BASELINE SUCCESS			> ### 📊 AVERAGE LATENCY	       
-> # `63,000+`						> # `₹261.1M`							> # `16.53%`						> # `1,040 ms`
-> **Synthetic UPI Transactions**	> **Transaction Volume Tracked**		> **High-Failure Scenario Sim**	> **Acquirer Gateway Benchmark**
-
+| ANALYZED RECORDS | GROSS VALUE ANALYZED | BASELINE SUCCESS | AVERAGE LATENCY |
+| :--- | :--- | :--- | :--- |
+| # **63,000+**<br><sub>Synthetic UPI Transactions</sub> | # **₹261.1M**<br><sub>Transaction Volume Tracked</sub> | # **16.53%**<br><sub>High-Failure Scenario Sim</sub> | # **1,040 ms**<br><sub>Acquirer Gateway Benchmark</sub> |
 
 # 1. Executive Project Summary
 Modern Unified Payments Interface (UPI) infrastructures handle tens of millions of daily transactions across diverse apps (Google Pay, PhonePe, Paytm, CRED) and banking gateways (HDFC, SBI, ICICI, Axis). This project establishes a production-grade business intelligence solution designed to monitor transaction telemetry in real-time, detect operational latency bottlenecks, pinpoint root causes for transaction failures, and model the financial revenue recovery of technical gateway optimizations.
